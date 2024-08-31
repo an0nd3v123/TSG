@@ -1,0 +1,136 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    color: #ffffff;
+    background-image: url('scarlet_goddess.png'); /* Definindo a imagem de fundo para o body */
+    background-size: cover; /* Faz a imagem cobrir todo o fundo */
+    background-position: center 20%; /* Ajuste para centralizar a imagem verticalmente */
+    background-repeat: no-repeat; /* Evita a repetição da imagem */
+    background-attachment: fixed; /* Faz a imagem rolar com a página */
+    display: flex;
+    flex-direction: column; /* Alinha conteúdo em coluna */
+    min-height: 100vh; /* Garante que o body cubra pelo menos a altura da tela */
+}
+
+header {
+    text-align: center;
+    padding: 20px;
+    background-color: rgba(26, 26, 26, 0.95); /* Fundo semi-transparente para o texto */
+    width: 100%; /* Faz o header cobrir toda a largura */
+    position: fixed; /* Fixa o header no topo */
+    top: 0;
+    z-index: 10; /* Garante que o header fique acima do fundo */
+    box-shadow: 0 4px 10px -2px rgba(255, 77, 77, 0.6); /* Sombra avermelhada abaixo do header */
+}
+
+header h1 {
+    margin: 0;
+    font-size: 2.5rem;
+    color: #ff4d4d;
+    text-shadow: 0 0 10px rgba(255, 77, 77, 0.6), /* Brilho suave ao redor do texto */
+                 0 0 20px rgba(255, 77, 77, 0.4),
+                 0 0 30px rgba(255, 77, 77, 0.2);
+}
+
+
+h1 {
+    margin: 0;
+    font-size: 2.5rem;
+    color: #ff4d4d;
+}
+
+.content {
+    flex: 1; /* Permite que o conteúdo cresça e empurre o footer para o final, se necessário */
+    display: flex;
+    flex-direction: column;
+    justify-content: center; /* Centraliza o conteúdo verticalmente */
+    align-items: center; /* Centraliza o conteúdo horizontalmente */
+    margin-top: 80px; /* Adiciona espaço para o header fixo */
+}
+
+.about {
+    position: relative; /* Para posicionamento do brilho */
+    padding: 20px;
+    background-color: rgba(26, 26, 26, 0.5); /* Fundo mais transparente */
+    text-align: center; /* Centraliza o texto */
+    max-width: 800px; /* Limita a largura do conteúdo para melhor leitura */
+    border-radius: 15px; /* Borda arredondada para um visual mais agradável */
+    margin: 20px; /* Adiciona espaço ao redor da caixa */
+    overflow: hidden; /* Para garantir que o pseudo-elemento não transborde */
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.9); /* Adiciona uma sombra para destacar a caixa */
+    border: 4px solid transparent; /* Inicializa a borda transparente */
+    z-index: 1; /* Define um nível de empilhamento menor para garantir que o conteúdo esteja acima do efeito */
+}
+
+.about h2 {
+    color: #fc2727;
+    font-size: 2.5rem;
+    text-align: center; /* Centraliza o texto do header "About" */
+    margin-bottom: 15px; /* Adiciona espaço abaixo do título */
+    text-shadow: 
+        -1px -1px 0 #000,  
+         1px -1px 0 #000,
+        -1px  1px 0 #000,
+         1px  1px 0 #000; /* Borda preta ao redor do texto */
+}
+
+.about p {
+    font-size: 1.1rem; /* Aumenta o tamanho da fonte para legibilidade */
+    line-height: 1.5; /* Aumenta o espaçamento entre linhas para melhorar a leitura */
+    text-align: justify; /* Justifica o texto para um visual mais limpo */
+    color: #ffffff; /* Cor ligeiramente mais clara para contraste com o fundo */
+    letter-spacing: 0.1px; /* Aumenta o espaçamento entre letras para melhor leitura */
+    margin-bottom: 15px; /* Espaço entre parágrafos */
+    text-shadow: 
+        -1px -1px 0 #000,  
+         1px -1px 0 #000,
+        -1px  1px 0 #000,
+         1px  1px 0 #000; /* Borda preta ao redor do texto */
+}
+
+.about p strong {
+    color: #ff4d4d; /* Destaque em vermelho para palavras-chave */
+    font-weight: bold; /* Negrito para maior ênfase */
+}
+
+.about::before {
+    content: '';
+    position: absolute;
+    top: -4px;
+    left: -4px;
+    right: -4px;
+    bottom: -4px;
+    border-radius: 19px; /* Ajuste para o efeito de borda arredondada */
+    background: linear-gradient(90deg, #ff4d4d79, #9f9f9f75, #ff4d4d79, #9f9f9f75, #ff4d4d79); /* Gradiente de vermelho a laranja */
+    background-size: 200% 200%;
+    z-index: -1; /* Garante que o efeito fique atrás do conteúdo */
+    pointer-events: none; /* Permite cliques no interior da caixa */
+    animation: borderGlow 3s linear infinite; /* Animação do brilho */
+}
+
+@keyframes borderGlow {
+    0% {
+        background-position: 0% 50%;
+    }
+    100% {
+        background-position: 100% 50%;
+    }
+}
+
+footer {
+    text-align: center;
+    padding: 20px;
+    background-color: rgba(26, 26, 26, 0.95); /* Fundo semi-transparente para o footer */
+    width: 100%;
+    z-index: 10; /* Garante que o footer fique acima do fundo */
+    position: relative; /* Necessário para layering */
+    bottom: 0;
+    box-shadow: 0 -4px 10px -2px rgba(255, 77, 77, 0.6); /* Sombra avermelhada acima do footer */
+    color: #ff4d4d;
+}
+
+footer p {
+    margin: 0;
+    font-size: 1rem;
+}
